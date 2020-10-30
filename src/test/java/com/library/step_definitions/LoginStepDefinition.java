@@ -17,16 +17,16 @@ public class LoginStepDefinition {
     }
 
 
-    @When("user logs in")
-    public void user_logs_in() {
-        loginPage.login();
+    @When("user logs in as a {string}")
+    public void user_logs_in(String string) {
+        loginPage.login(string);
         BrowserWait.wait(3);
-
 
     }
 
-    @Then("user should see homepage")
-    public void user_should_see_homepage()  {
+
+    @Then("user should see homepage name Dashboard")
+    public void user_should_see_homepage_Dashboard() {
         String expected = "Dashboard";
         String actual = loginPage.getPageSubTitleText().trim();
 
@@ -37,13 +37,24 @@ public class LoginStepDefinition {
     }
 
 
+    @Then("user should see homepage name Books")
+    public void user_should_see_homepage_Books() {
+        String expected = "Books";
+        String actual = loginPage.getPageSubTitleText_Student().trim();
 
+        Assert.assertEquals("Title is not correct", expected, actual);
 
+        System.out.println("I see Books Yaaasss");
+        BrowserWait.wait(3);
+        Driver.closeDriver();
 
-
-
-
-
-
+    }
 
 }
+
+
+
+
+
+
+

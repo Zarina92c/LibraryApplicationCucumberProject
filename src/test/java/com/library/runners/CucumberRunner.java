@@ -12,9 +12,8 @@ import org.junit.runner.RunWith;
         features ="src/test/resources/features",
         glue = "com/library/step_definitions",
         dryRun = false,
-        tags = "@records_per_page",
+        tags = "@student1",
         publish = true
-
 
 
 )

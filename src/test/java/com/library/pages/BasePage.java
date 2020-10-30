@@ -8,7 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 public abstract class BasePage {
 
     @FindBy (xpath = "//a[@href='#dashboard']")
-    protected WebElement pageSubTitle;
+    protected WebElement librarianPageSubTitle;
+
+    @FindBy(xpath = "//a[@href='#books']")
+    protected WebElement studentPageSubtitle;
 
 
     public BasePage() {
@@ -16,7 +19,11 @@ public abstract class BasePage {
     }
 
    public String getPageSubTitleText() {
-        return pageSubTitle.getText();
+        return librarianPageSubTitle.getText();
+    }
+
+    public String getPageSubTitleText_Student() {
+        return studentPageSubtitle.getText();
     }
 
 }
