@@ -1,7 +1,7 @@
 package com.library.pages;
 
 import com.library.utils.ConfigurationReader;
-import com.sun.deploy.net.proxy.WDefaultBrowserProxyConfig;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
