@@ -1,6 +1,7 @@
 @Smoke
 Feature: As a librarian I want to create new users
 
+  @librarian
   Scenario: Creating a new student user account
     Given user is on the login page
     When user logs in as a "librarian"
