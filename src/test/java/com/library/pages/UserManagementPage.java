@@ -3,7 +3,7 @@ package com.library.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class UserManagementPage {
+public class UserManagementPage extends LoginPage{
 
     @FindBy(xpath = "//i[@class='fa fa-plus']")
     WebElement addUserButton;
@@ -14,6 +14,8 @@ public class UserManagementPage {
 
     @FindBy(xpath = "//tr[1]/td[2]")
     WebElement userIDBox;
+
+
 
 
 }
