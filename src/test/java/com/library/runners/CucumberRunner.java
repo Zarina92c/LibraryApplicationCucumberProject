@@ -13,7 +13,11 @@ import org.junit.runner.RunWith;
         glue = "com/library/step_definitions",
         dryRun = false,
         tags = "@librarian",
+
+        publish = false
+
         publish = true
+
 
 
 )
