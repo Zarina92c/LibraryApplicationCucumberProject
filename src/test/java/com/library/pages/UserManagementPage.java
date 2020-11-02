@@ -14,8 +14,6 @@ import org.openqa.selenium.support.ui.Select;
 public class UserManagementPage extends LoginPage{
 
 
-
-
     @FindBy(xpath = "//i[@class='fa fa-plus']")
     protected WebElement addUserButton;
 

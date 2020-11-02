@@ -1,6 +1,7 @@
 @Smoke
 Feature: As a librarian I want to create new users
 
+
   @librarian @creating_new_users
   Scenario: Creating a new student user account
     Given user is on the login page
@@ -20,4 +21,5 @@ Feature: As a librarian I want to create new users
     When user adds new user information as "librarian" type
     And user clicks on save changes button
     Then user should see new user top of the list
+
 
