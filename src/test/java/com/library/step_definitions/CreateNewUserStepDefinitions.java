@@ -21,9 +21,9 @@ public class CreateNewUserStepDefinitions {
     public void user_clicks_on_add_user_button() {
         userManagementPage.click_addUserButton();
     }
-    @When("user adds new user information as student type")
-    public void user_adds_new_user_information_as_student_type() {
-        userManagementPage.addUser("librarian");
+    @When("user adds new user information as {string} type")
+    public void user_adds_new_user_information_as_student_type(String string) {
+        userManagementPage.addUser(string);
     }
     @When("user clicks on save changes button")
     public void user_clicks_on_save_changes_button() {

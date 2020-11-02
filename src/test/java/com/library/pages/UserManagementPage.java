@@ -10,7 +10,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
+
 public class UserManagementPage extends LoginPage{
+
+
+
 
     @FindBy(xpath = "//i[@class='fa fa-plus']")
     protected WebElement addUserButton;
@@ -55,9 +59,9 @@ public class UserManagementPage extends LoginPage{
 
     /**
      *
-     * @param str is for userGroup can be only student or librarian
+     * @param userType is for userGroup can be only student or librarian
      */
-    public void addUser(String str){
+    public void addUser(String userType){
         Faker faker =new Faker();
         String fullName=faker.name().fullName();
         String password=faker.number().digits(5);
@@ -65,7 +69,7 @@ public class UserManagementPage extends LoginPage{
         String companyUrl= faker.company().url().substring(4);
         String email = usernameEmail+"@"+companyUrl;
         String address= faker.address().fullAddress();
-        if (str.equalsIgnoreCase("student")){
+        if (userType.equalsIgnoreCase("student")){
             fullNameInbox.sendKeys(fullName);
             passwordInbox.sendKeys(password);
             emailInbox.sendKeys(email);
@@ -79,7 +83,7 @@ public class UserManagementPage extends LoginPage{
             BrowserWait.wait(1);
             WebElement yearPicker = Driver.getDriver().findElement(By.xpath("/html/body/div[2]/div[1]/table/thead/tr[1]/th[2]"));
             yearPicker.click();*/
-        }else if (str.equalsIgnoreCase("librarian")){
+        }else if (userType.equalsIgnoreCase("librarian")){
             fullNameInbox.sendKeys(fullName);
             passwordInbox.sendKeys(password);
             emailInbox.sendKeys(email);
@@ -94,7 +98,7 @@ public class UserManagementPage extends LoginPage{
             WebElement yearPicker = Driver.getDriver().findElement(By.xpath("/html/body/div[2]/div[1]/table/thead/tr[1]/th[2]"));
             yearPicker.click();*/
         }else{
-            throw new RuntimeException("There is not such a named '"+str+"'  user");
+            throw new RuntimeException("There is not such a named '"+userType+"'  user");
         }
     }
 

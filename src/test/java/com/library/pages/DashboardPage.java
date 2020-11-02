@@ -12,9 +12,11 @@ public class DashboardPage extends LoginPage{
     protected WebElement usersButton;
 
     public void click_dashboardButton(){
+
         dashboardButton.click();
     }
     public void click_usersButton(){
+
         usersButton.click();
     }
 
