@@ -11,7 +11,8 @@ Background: common steps
     Then user verifies the Group is sorted
 
 
-  Scenario: Librarian is able to sort the user by "Group" or "Status"
-    And user navigates to "Status"
-    Then user verifies the Status is sorted
+#  Scenario: Librarian is able to sort the user by "Group" or "Status"
+ #   And user navigates to "Status"
+  #  Then user verifies the Status is sorted
+
 

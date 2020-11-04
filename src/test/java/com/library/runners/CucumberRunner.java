@@ -11,9 +11,9 @@ import org.junit.runner.RunWith;
 
         features ="src/test/resources/features",
         glue = "com/library/step_definitions",
-        dryRun = false,
-        tags = "@creating_new_users",
-        publish = true
+        dryRun = true,
+        tags = "@sort_users",
+        publish = false
 
 
 )

@@ -1,6 +1,7 @@
 package com.library.pages;
 
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -21,7 +22,10 @@ public class CreateLibrarianSortUsersPage extends LoginPage{
     public void clickOnStatus() {statusBtn.click();
     }
 
-
+    public void assertGroupSorting(){
+        String sortingValue = groupBtn.getAttribute("aria-label");
+        Assert.assertTrue(sortingValue.contains("descending"));
+    }
 
 
     }
