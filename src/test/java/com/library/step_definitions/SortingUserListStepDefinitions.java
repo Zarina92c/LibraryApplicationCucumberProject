@@ -20,4 +20,18 @@ public class SortingUserListStepDefinitions {
 
 
     }
+    @Then("user navigates to Status")
+    public void user_navigates_to() {
+        librarianSortUsersPage.clickOnStatus();
+
+    }
+
+
+
+
+    @Then("user verifies the Status is sorted")
+    public void user_verifies_the_status_is_sorted() {
+        librarianSortUsersPage.assertStatusSorting();
+
+    }
 }

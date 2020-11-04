@@ -38,7 +38,12 @@ public class LibrarianSortUsersPage extends LoginPage{
         Assert.assertTrue(sortingValue.contains("descending"));
 
     }
-
+    public void assertStatusSorting() {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver() , 10);
+        wait.until(ExpectedConditions.visibilityOf(statusBtn));
+        String sortingValue = statusBtn.getAttribute("aria-label");
+        Assert.assertTrue(sortingValue.contains("descending"));
+    }
 
 
     }
