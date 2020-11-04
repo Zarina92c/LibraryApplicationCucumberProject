@@ -7,7 +7,7 @@ Background: common steps
   Then user clicks on users button
 
   Scenario: Librarian is able to sort the user by "Group"
-    And user navigates to "Group" and clicks on it
+    And user navigates to Group and clicks on it
     Then user verifies the Group is sorted
 
 

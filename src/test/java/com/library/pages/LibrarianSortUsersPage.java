@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class CreateLibrarianSortUsersPage extends LoginPage{
+public class LibrarianSortUsersPage extends LoginPage{
 
 
     @FindBy(xpath = "/html/body/main/section[2]/div[1]/div[3]/div[2]/table/thead/tr/th[5]")
