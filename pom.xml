@@ -31,6 +31,11 @@
         <artifactId>webdrivermanager</artifactId>
         <version>4.2.2</version>
     </dependency>
+    <dependency>
+        <groupId>net.bytebuddy</groupId>
+        <artifactId>byte-buddy</artifactId>
+        <version>1.10.17</version>
+    </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
     <dependency>
