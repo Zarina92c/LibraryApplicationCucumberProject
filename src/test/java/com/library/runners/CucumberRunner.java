@@ -8,14 +8,17 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions (
 
-
+        plugin = "html:target/cucumber-report.html",
         features ="src/test/resources/features",
         glue = "com/library/step_definitions",
         dryRun = false,
-        tags = "@Smoke",
+        tags = "@librarian",
+
+
         publish = true
 
-
 )
+
+
 public class CucumberRunner {
 }
