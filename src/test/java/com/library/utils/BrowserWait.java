@@ -22,5 +22,6 @@ public class BrowserWait {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
     }
 }
