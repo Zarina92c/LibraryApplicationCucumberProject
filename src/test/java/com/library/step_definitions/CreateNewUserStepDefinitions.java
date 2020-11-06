@@ -14,9 +14,6 @@ public class CreateNewUserStepDefinitions {
         dashboardPage.click_usersButton();
     }
 
-
-
-
     @Then("user clicks on add user button")
     public void user_clicks_on_add_user_button() {
         userManagementPage.click_addUserButton();

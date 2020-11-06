@@ -1,19 +1,35 @@
-@log_in @smoke
-Feature: As a user I want to be able to login under different role
+@Smoke
+Feature: As a librarian I want to create new users
+
+
+  @librarian @creating_new_users
+  Scenario: Creating a new student user account
+    Given user is on the login page
+    When user logs in as a "librarian"
+    Then user clicks on users button
+    Then user clicks on add user button
+    When user adds new user information as "student" type
+    And user clicks on save changes button
+    Then user should see new user top of the list
+
+  @librarian
+  Scenario: Creating a new student user account
+    Given user is on the login page
+    When user logs in as a "librarian"
+    Then user clicks on users button
+    Then user clicks on add user button
+    When user adds new user information as "librarian" type
+    And user clicks on save changes button
+    Then user should see new user top of the list
 
 
   @librarian
-  Scenario: Login as a librarian
+  Scenario: Managing records per page
   Given user is on the login page
-    When user logs in as a "librarian"
-    Then user should see homepage name Dashboard
-
-
-  @student1
-  Scenario: Login as a "student1"
-    Given user is on the login page
-    When user logs in as a "student1"
-    Then user should see homepage name Books
+  When user logs in as a "librarian"
+  Then user clicks on users button
+  When chooses the number from show records dropdown
+  Then user should see the number of records on the page
 
 
    # @records_per_page
