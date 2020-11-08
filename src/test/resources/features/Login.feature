@@ -1,4 +1,4 @@
-@Smoke @loginWithBackground
+@smoke @loginWithBackground
 Feature: As a librarian I want to create new users
 
 Background: User is on the login page
