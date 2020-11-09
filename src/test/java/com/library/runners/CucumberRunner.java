@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions (
+
         plugin = {
                 "rerun:target/rerun.txt",
                 "json:target/cucumber.json"
@@ -17,8 +18,6 @@ import org.junit.runner.RunWith;
         glue = "com/library/step_definitions",
         dryRun = false,
         tags = "@loginWithBackground",
-
-
         publish = true
 
 )
