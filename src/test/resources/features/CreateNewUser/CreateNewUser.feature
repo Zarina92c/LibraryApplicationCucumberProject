@@ -1,8 +1,8 @@
-@Smoke
+@smoke
 Feature: As a librarian I want to create new users
 
 
-  @librarian @creating_new_users
+  @librarian @creating_new_users @smoke
   Scenario: Creating a new student user account
     Given user is on the login page
     When user logs in as a "librarian"

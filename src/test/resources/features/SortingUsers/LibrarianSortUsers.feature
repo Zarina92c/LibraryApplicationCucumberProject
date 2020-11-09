@@ -1,4 +1,4 @@
-@sort_users @Smoke
+@sort_users @smoke
 
 Feature: As a librarian I should be able to sort the user by "User Group" or "Status"
 Background: common steps
