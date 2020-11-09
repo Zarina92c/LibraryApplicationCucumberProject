@@ -96,16 +96,21 @@ public class UserManagementPage extends LoginPage{
             throw new RuntimeException("There is not such a named '"+userType+"'  user");
         }
     }
-
     public void click_saveChangeButton(){
         saveChangesButton.click();
     }
+
+
     public void click_closeButton(){
         closeButton.click();
     }
     public void assertingNewUserCreated(){
         Assert.assertTrue(newUserCreatedMessage.isDisplayed());
     }
+
+
+
+
 
 
 }
