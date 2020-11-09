@@ -12,7 +12,7 @@ Background: User is on the login page
 
     @student
   Scenario: Student scenario login
-  When user logs in as a "student1"
+  When user logs in as a "student5"
   Then user should see homepage name Books
 
 
