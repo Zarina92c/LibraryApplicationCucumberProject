@@ -1,6 +1,6 @@
 Feature: As a librarian I should be able to sort users
 
-  @librarian
+  @librarian @sorting_by_number
   Scenario: Managing records per page
     Given user is on the login page
     When user logs in as a "librarian"
