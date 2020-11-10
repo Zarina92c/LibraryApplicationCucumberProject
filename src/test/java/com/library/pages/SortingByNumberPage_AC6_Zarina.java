@@ -10,7 +10,8 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class SortingByNumberPage {
+public class SortingByNumberPage_AC6_Zarina {
+    // Zarinas test case AC#6
 
     Select dropdown = new Select(Driver.getDriver().findElement(By.xpath("//select[@name='tbl_users_length']")));
 

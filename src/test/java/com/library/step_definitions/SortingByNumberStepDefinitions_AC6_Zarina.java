@@ -1,12 +1,13 @@
 package com.library.step_definitions;
 
 import com.library.pages.DashboardPage;
-import com.library.pages.SortingByNumberPage;
+import com.library.pages.SortingByNumberPage_AC6_Zarina;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class SortingByNumberStepDefinitions {
-    SortingByNumberPage sortingByNumberPage = new SortingByNumberPage();
+public class SortingByNumberStepDefinitions_AC6_Zarina {
+    // Zarinas test case AC#6
+    SortingByNumberPage_AC6_Zarina sortingByNumberPage = new SortingByNumberPage_AC6_Zarina();
     DashboardPage dashboardPage = new DashboardPage();
 
     @When("chooses the number from show records dropdown")
