@@ -1,14 +1,36 @@
 package com.library.pages;
 
 import com.github.javafaker.Faker;
+import com.library.utils.Driver;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class UserManagementPage extends LoginPage{
+    /**
+     *
+     * @param e => Edit User button for e times
+     */
+    public void click_editUserButton(String e){
+        String xpath1 = "//table[@id='tbl_users']//tr["+e+"]/td[1]";
+        Driver.getDriver().findElement(By.xpath(xpath1)).click();
+    }
+
+    @FindBy(xpath = "//div[@class='toast toast-success']")
+    protected WebElement editUserUpdateMessage;
+    public void assertionUpdateUser(){
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 15);
+        wait.until(ExpectedConditions.visibilityOf(editUserUpdateMessage));
+        Assert.assertTrue(editUserUpdateMessage.isDisplayed());
+
+    }
 
 
     @FindBy(xpath = "//i[@class='fa fa-plus']")
@@ -44,13 +66,25 @@ public class UserManagementPage extends LoginPage{
     protected WebElement userGroupDropDown;
 
     @FindBy(id = "status")
-    protected WebElement statusDropDown;
+    protected Select statusDropDown;
 
     @FindBy(xpath = "//button[.='Save changes']")
     protected WebElement saveChangesButton;
 
     @FindBy(xpath = "//button[.='Close']")
     protected WebElement closeButton;
+
+    public void editUserName(String fullName){
+        fullNameInbox.clear();
+        fullNameInbox.sendKeys(fullName);
+    }
+    public void editEmail(String eMail){
+        emailInbox.clear();
+        emailInbox.sendKeys(eMail);
+    }
+
+
+
 
     /**
      *

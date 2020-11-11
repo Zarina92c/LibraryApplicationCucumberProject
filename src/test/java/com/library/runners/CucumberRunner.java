@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         features ="src/test/resources/features",
         glue = "com/library/step_definitions",
         dryRun = false,
-        tags = "@librarian and @sorting_by_number",
+        tags = "@edit_user_information",
         publish = true
 
 )
