@@ -6,7 +6,7 @@ import com.library.utils.BrowserWait;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class EditUserStepDefinitions_AC5Guzel {
+public class EditUserStepDefinitions {
     UserManagementPage userManagementPage = new UserManagementPage();
     Faker faker = new Faker();
 
