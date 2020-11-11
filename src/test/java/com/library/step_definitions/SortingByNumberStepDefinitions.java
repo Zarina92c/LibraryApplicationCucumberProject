@@ -5,7 +5,7 @@ import com.library.pages.RecordsPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class SortingByNumberStepDefinitions_AC6_Zarina {
+public class SortingByNumberStepDefinitions {
     // Zarinas test case AC#6
     RecordsPage sortingByNumberPage = new RecordsPage();
 
