@@ -13,6 +13,10 @@ public class Driver {
     public static WebDriver getDriver() {
         if (driver == null) {
             String browser = ConfigurationReader.getProperty("browser");
+            if (System.getProperty("browser")!=null) {
+                System.out.println("Browser type was changed to: "+System.getProperty("browser"));
+                browser = System.getProperty("browser");
+            }
             switch (browser) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
