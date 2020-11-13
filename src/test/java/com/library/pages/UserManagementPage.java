@@ -74,13 +74,46 @@ public class UserManagementPage extends LoginPage{
     @FindBy(xpath = "//button[.='Close']")
     protected WebElement closeButton;
 
-    public void editUserName(String fullName){
-        fullNameInbox.clear();
-        fullNameInbox.sendKeys(fullName);
-    }
-    public void editEmail(String eMail){
-        emailInbox.clear();
-        emailInbox.sendKeys(eMail);
+
+    public void editUserInformation(String editType){
+        Faker faker =new Faker();
+        String fullName=faker.name().fullName();
+        String password=faker.number().digits(5);
+        String usernameEmail = faker.name().username();
+        String companyUrl= faker.company().url().substring(4);
+        String email = usernameEmail+"@"+companyUrl;
+        String address= faker.address().fullAddress();
+        if (editType.equalsIgnoreCase("student")){
+            fullNameInbox.sendKeys(fullName);
+            passwordInbox.sendKeys(password);
+            emailInbox.sendKeys(email);
+            addressInbox.sendKeys(address);
+            Select userGroup = new Select(userGroupDropDown);
+            userGroup.selectByValue("3");
+            endDatePicker.clear();
+            endDatePicker.click();
+            endDatePicker.sendKeys(Keys.ENTER);
+           /* endDatePicker.click();
+            BrowserWait.wait(1);
+            WebElement yearPicker = Driver.getDriver().findElement(By.xpath("/html/body/div[2]/div[1]/table/thead/tr[1]/th[2]"));
+            yearPicker.click();*/
+        }else if (editType.equalsIgnoreCase("librarian")){
+            fullNameInbox.sendKeys(fullName);
+            passwordInbox.sendKeys(password);
+            emailInbox.sendKeys(email);
+            addressInbox.sendKeys(address);
+            Select userGroup = new Select(userGroupDropDown);
+            userGroup.selectByValue("2");
+            endDatePicker.clear();
+            endDatePicker.click();
+            endDatePicker.sendKeys(Keys.ENTER);
+           /* endDatePicker.click();
+            BrowserWait.wait(1);
+            WebElement yearPicker = Driver.getDriver().findElement(By.xpath("/html/body/div[2]/div[1]/table/thead/tr[1]/th[2]"));
+            yearPicker.click();*/
+        }else{
+            throw new RuntimeException("There is not such a named '"+editType+"'  user");
+        }
     }
 
 
@@ -130,6 +163,7 @@ public class UserManagementPage extends LoginPage{
             throw new RuntimeException("There is not such a named '"+userType+"'  user");
         }
     }
+
     public void click_saveChangeButton(){
         saveChangesButton.click();
     }

@@ -16,10 +16,10 @@ public class EditUserStepDefinitions {
 
     }
 
-    @When("user edit user information")
-    public void user_edit_user_information() {
-    userManagementPage.editUserName("John Smith");
-    userManagementPage.editEmail("JohnSmith@yahoo.com");
+    @When("user edit user information as {string} type ")
+    public void user_edit_user_information(String str){
+        userManagementPage.editUserInformation(str);
+
 
 
     }
