@@ -12,6 +12,6 @@ Feature: As a librarian I should be able to edit user information
     Then user clicks on edit user button
     When user edit user information
     When  clicks on save changes button
-    Then user should see the 'the user updated' message
+    Then user should see the the user updated message
 
 

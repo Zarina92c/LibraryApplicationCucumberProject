@@ -34,7 +34,7 @@ public class EditUserStepDefinitions {
     }
 
 
-    @Then("user should see the {string} message")
+    @Then("user should see the the user updated message")
     public void userShouldSeeTheTheUserUpdatedMessage() {
         userManagementPage.assertionUpdateUser();
     }
