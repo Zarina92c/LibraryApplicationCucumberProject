@@ -20,6 +20,7 @@ public class CreateNewUserStepDefinitions {
     }
     @When("user adds new user information as {string} type")
     public void user_adds_new_user_information_as_student_type(String string) {
+
         userManagementPage.addUser(string);
     }
     @When("user clicks on save changes button")
@@ -30,4 +31,7 @@ public class CreateNewUserStepDefinitions {
     public void user_should_see_new_user_top_of_the_list() {
         userManagementPage.assertingNewUserCreated();
     }
+
+
+
 }

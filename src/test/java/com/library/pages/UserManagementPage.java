@@ -2,6 +2,7 @@ package com.library.pages;
 
 import com.github.javafaker.Faker;
 import com.library.utils.Driver;
+import com.library.utils.LibraryUserUtil;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -11,6 +12,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.Map;
 
 
 public class UserManagementPage extends LoginPage{
@@ -75,46 +78,6 @@ public class UserManagementPage extends LoginPage{
     protected WebElement closeButton;
 
 
-    public void editUserInformation(String editType){
-        Faker faker =new Faker();
-        String fullName=faker.name().fullName();
-        String password=faker.number().digits(5);
-        String usernameEmail = faker.name().username();
-        String companyUrl= faker.company().url().substring(4);
-        String email = usernameEmail+"@"+companyUrl;
-        String address= faker.address().fullAddress();
-        if (editType.equalsIgnoreCase("student")){
-            fullNameInbox.sendKeys(fullName);
-            passwordInbox.sendKeys(password);
-            emailInbox.sendKeys(email);
-            addressInbox.sendKeys(address);
-            Select userGroup = new Select(userGroupDropDown);
-            userGroup.selectByValue("3");
-            endDatePicker.clear();
-            endDatePicker.click();
-            endDatePicker.sendKeys(Keys.ENTER);
-           /* endDatePicker.click();
-            BrowserWait.wait(1);
-            WebElement yearPicker = Driver.getDriver().findElement(By.xpath("/html/body/div[2]/div[1]/table/thead/tr[1]/th[2]"));
-            yearPicker.click();*/
-        }else if (editType.equalsIgnoreCase("librarian")){
-            fullNameInbox.sendKeys(fullName);
-            passwordInbox.sendKeys(password);
-            emailInbox.sendKeys(email);
-            addressInbox.sendKeys(address);
-            Select userGroup = new Select(userGroupDropDown);
-            userGroup.selectByValue("2");
-            endDatePicker.clear();
-            endDatePicker.click();
-            endDatePicker.sendKeys(Keys.ENTER);
-           /* endDatePicker.click();
-            BrowserWait.wait(1);
-            WebElement yearPicker = Driver.getDriver().findElement(By.xpath("/html/body/div[2]/div[1]/table/thead/tr[1]/th[2]"));
-            yearPicker.click();*/
-        }else{
-            throw new RuntimeException("There is not such a named '"+editType+"'  user");
-        }
-    }
 
 
 
@@ -141,10 +104,7 @@ public class UserManagementPage extends LoginPage{
             endDatePicker.clear();
             endDatePicker.click();
             endDatePicker.sendKeys(Keys.ENTER);
-           /* endDatePicker.click();
-            BrowserWait.wait(1);
-            WebElement yearPicker = Driver.getDriver().findElement(By.xpath("/html/body/div[2]/div[1]/table/thead/tr[1]/th[2]"));
-            yearPicker.click();*/
+
         }else if (userType.equalsIgnoreCase("librarian")){
             fullNameInbox.sendKeys(fullName);
             passwordInbox.sendKeys(password);
@@ -155,13 +115,46 @@ public class UserManagementPage extends LoginPage{
             endDatePicker.clear();
             endDatePicker.click();
             endDatePicker.sendKeys(Keys.ENTER);
-           /* endDatePicker.click();
-            BrowserWait.wait(1);
-            WebElement yearPicker = Driver.getDriver().findElement(By.xpath("/html/body/div[2]/div[1]/table/thead/tr[1]/th[2]"));
-            yearPicker.click();*/
+
         }else{
             throw new RuntimeException("There is not such a named '"+userType+"'  user");
         }
+    }
+
+    public void editUserInformation(){
+
+        Map<String,Object> user= LibraryUserUtil.createUser(2);
+       fullNameInbox.clear();
+       fullNameInbox.sendKeys((CharSequence) user.get("full_name"));
+
+       passwordInbox.clear();
+       passwordInbox.sendKeys((CharSequence) user.get("password"));
+
+       emailInbox.clear();
+       emailInbox.sendKeys((CharSequence)user.get("email"));
+
+       Select userGroup = new Select(userGroupDropDown);
+        userGroup.selectByValue("2");
+
+        startDatePicker.clear();
+        startDatePicker.sendKeys((CharSequence) user.get("start_date"));
+
+        endDatePicker.clear();
+        endDatePicker.sendKeys((CharSequence) user.get("end_date"));
+
+        addressInbox.clear();
+        addressInbox.sendKeys((CharSequence) user.get("address"));
+
+
+    }
+
+    public void editUserName(String name){
+        fullNameInbox.clear();
+        fullNameInbox.sendKeys(name);
+    }
+    public void editUserEmail(String email){
+        emailInbox.clear();
+        emailInbox.sendKeys(email);
     }
 
     public void click_saveChangeButton(){
