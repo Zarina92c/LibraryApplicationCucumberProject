@@ -1,0 +1,5 @@
+1.water
+2.bread
+3.tomatoes
+4.meat
+5.cheese
